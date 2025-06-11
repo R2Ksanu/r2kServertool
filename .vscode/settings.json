@@ -1,0 +1,6 @@
+{
+    "tailwindcss-intellisense.trace.server": "messages",
+    "tailwindCSS.includeLanguages": {
+        "css": "css"
+    }
+}
