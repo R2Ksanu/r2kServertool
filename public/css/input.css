@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #1a282c;
+  color: #e2e8f0;
+}
+
+button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}

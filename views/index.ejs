@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Dashboard</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <header class="bg-cyan-600 p-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Minecraft Bot Dashboard</h1>
+        <div>
+            <span>Welcome, <%= user.username %>#<%= user.discriminator %></span>
+            <a href="/logout" class="ml-4 bg-red-600 px-4 py-2 rounded hover:bg-red-700">Logout</a>
+        </div>
+    </header>
+    <main class="max-w-4xl mx-auto p-6">
+        <section class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+            <h2 class="text-xl font-semibold mb-4">Server Status</h2>
+            <p><strong>IP:</strong> <%= server.ip %></p>
+            <p><strong>Monitoring:</strong> <%= server.monitoring ? 'Active 🟢' : 'Stopped 🔴' %></p>
+        </section>
+        <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">Manage Server</h2>
+            <form action="/update" method="POST" class="space-y-4">
+                <div>
+                    <label for="ip" class="block">Server IP:</label>
+                    <input type="text" id="ip" name="ip" value="<%= server.ip === 'Not set' ? '' : server.ip %>" class="w-full p-2 bg-gray-700 rounded">
+                </div>
+                <div class="flex space-x-4">
+                    <button type="submit" name="action" value="setup" class="bg-cyan-600 px-4 py-2 rounded hover:bg-cyan-700">Setup</button>
+                    <button type="submit" name="action" value="start" class="bg-green-600 px-4 py-2 rounded hover:bg-green-700">Start</button>
+                    <button type="submit" name="action" value="stop" class="bg-red-600 px-4 py-2 rounded hover:bg-red-700">Stop</button>
+                </div>
+                <div>
+                    <label for="time" class="block">Message Time (e.g., 1h, 30m):</label>
+                    <input type="text" id="time" name="time" class="w-full p-2 bg-gray-700 rounded">
+                    <select name="type" class="mt-2 p-2 bg-gray-700 rounded">
+                        <option value="maintenance">Maintenance</option>
+                        <option value="server_stop">Server Stop</option>
+                    </select>
+                    <button type="submit" name="action" value="msg" class="mt-2 bg-purple-600 px-4 py-2 rounded hover:bg-purple-700">Send Message</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

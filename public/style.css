@@ -1,0 +1,30 @@
+/*
+! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com
+*/
+
+@charset "UTF-8";
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-webkit-keyframes ping {
+  75%, 100% { -webkit-transform: scale(2); transform: scale(2); opacity: 0; }
+}
+@keyframes ping {
+  75%, 100% { -webkit-transform: scale(2); transform: scale(2); opacity: 0; }
+}
+/* ... (thousands of lines of Tailwind utility classes) ... */
+
+body {
+  background-color: #1a282c;
+  color: #e2e8f0;
+}
+
+button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+/* Additional Tailwind utilities and your custom styles will be appended here */
